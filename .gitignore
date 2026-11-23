@@ -1,0 +1,19 @@
+# build artifacts
+node_modules/
+rust/target/
+dist/
+*.tsbuildinfo
+
+# local env
+.env
+.env.*
+
+# editors / os
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
+
+# logs and local captures
+*.log
+/tmp/

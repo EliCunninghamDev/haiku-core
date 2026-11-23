@@ -1,0 +1,24 @@
+[package]
+name = "haiku-core"
+version = "0.4.2"
+edition = "2021"
+rust-version = "1.75"
+description = "Deterministic 5-7-5 syllable verification for the HaikuSec bounty engine"
+license = "MIT"
+repository = "https://github.com/EliCunninghamDev/haikusec-core"
+homepage = "https://github.com/EliCunninghamDev/haikusec-core"
+keywords = ["haiku", "poetry", "syllable", "web3", "bounty"]
+categories = ["command-line-utilities", "text-processing"]
+readme = "../README.md"
+publish = false
+
+[[bin]]
+name = "haiku-core"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

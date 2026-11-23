@@ -1,0 +1,45 @@
+name: Feature request
+description: Propose a rule, a route, or a mode.
+title: "[feat] "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check [ROADMAP.md](../blob/main/ROADMAP.md) and the non-goals before
+        writing this out. Zero dependencies is a constraint, not a slogan.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What does the current tool fail to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Be concrete. Name the function, route, or rule.
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Words or poems that demonstrate the problem.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: This can be implemented without adding a dependency.
+          required: true
+        - label: This can be implemented in both engines.
+          required: true
