@@ -91,7 +91,11 @@ fn main() -> ExitCode {
                 .map(|c| c.to_string())
                 .collect::<Vec<_>>()
                 .join(",");
-            println!("{{\"syllables\":[{}],\"total\":{}}}", json, counts.iter().sum::<usize>());
+            println!(
+                "{{\"syllables\":[{}],\"total\":{}}}",
+                json,
+                counts.iter().sum::<usize>()
+            );
             ExitCode::SUCCESS
         }
         "verify" => {
@@ -106,7 +110,11 @@ fn main() -> ExitCode {
             println!(
                 "{{\"ok\":{},\"counts\":[{}],\"expected\":[5,7,5]}}",
                 ok,
-                counts.iter().map(|c| c.to_string()).collect::<Vec<_>>().join(",")
+                counts
+                    .iter()
+                    .map(|c| c.to_string())
+                    .collect::<Vec<_>>()
+                    .join(",")
             );
             if ok {
                 ExitCode::SUCCESS
